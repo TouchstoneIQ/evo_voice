@@ -1,0 +1,21 @@
+{
+  "name": "evo_electron",
+  "version": "0.0.1",
+  "description": "make evo console a desktop app with desktop notifications",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^24.3.0",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.1.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-winstaller": "^5.1.0"
+  }
+}

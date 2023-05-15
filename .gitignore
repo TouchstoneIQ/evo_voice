@@ -1,0 +1,4 @@
+node_modules/*
+EvoPhoneConsole-win32-x64/*
+*.zip
+index.tiq

@@ -38,7 +38,10 @@ function showMainWindow() {
 }
 
 function showLoginWindow() {
-    window.loadURL('https://v3.hostedsuite.com/dashboard/#/console')
+    var url = 'https://v3.hostedsuite.com/dashboard/#/console';
+    //var url = 'https://console.evovoice.io/login?Customer=touchstoneiq';
+    
+    window.loadURL(url)
         .then(() => { window.show(); })
 
     const contents = window.webContents.on("console-message", (ev, level, message, line, file) => {
@@ -85,9 +88,27 @@ electronIpcMain.on('message:loginSuccessful', (event, session) => {
 })
 
 function alertUser() {
+    const supportLines = [
+        { number: '18445364528', label: 'Denver Helpdesk' },
+        { number: '18448118785', label: 'Boulder Helpdesk' },
+        { number: '17207021584', label: 'Fort Collins Helpdesk' },
+        { number: '18885130353', label: 'Colorado Helpdesk' },
+        { number: '17866613208', label: 'Miami Helpdesk' },
+        { number: '18666147542', label: 'EBC Helpdesk' }, 
+        { number: '18087361077', label: 'Honolulu Helpdesk'}
+    ];
+
+    let caller = supportLines.find(sl => sl.number === incomingCall);
+    
+    if (!caller) {
+        var name = 'Direct Call';
+    } else {
+        var name = caller.label;
+    }
+
     new Notification({
-        title: "Incoming Call for "+incomingCall,
-        body: "Incoming call for "+incomingCall,
+        title: "Incoming Call for "+name,
+        body: "Incoming call for "+name,
     }).show();
 }
 

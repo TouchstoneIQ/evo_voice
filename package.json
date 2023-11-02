@@ -1,6 +1,6 @@
 {
-  "name": "evo_electron",
-  "version": "1.0.0",
+  "name": "evo_console",
+  "version": "1.0.5",
   "description": "make evo console a desktop app with desktop notifications",
   "main": "main.js",
   "scripts": {
